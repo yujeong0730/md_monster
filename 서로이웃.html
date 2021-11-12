@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv=Content-type content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>네이버 :: 이웃추가</title>
+	<link rel="stylesheet" href=https://ssl.pstatic.net/t.static.blog/mylog/versioning//common/css/buddy_add_pop-5481af9_https.css type="text/css">
+</head>
+
+<body>
+
+
+<div class="area_layer_popup" id="content">
+	<div class="popup_buddy">
+		<form name="buddyFrm" method="POST" action="BuddyAdd.naver">
+			<input type="hidden" name="blogId" value="md_monster">
+			<fieldset>
+				<legend>이웃추가</legend>
+				<div class="popup_heading">
+					<h1 class="title" aria-hidden="true">
+						이웃추가
+					</h1>
+				</div>
+				<div class="popup_text">
+					<div class="buddy_state">
+						
+						<p class="text_buddy_add">
+							<strong class="name_buddy">엠디몬스터</strong>님과
+							<span class="wrap_radio  checked">
+                                        <!-- [D] (ie8을 위함.) .radio_button_buddy가 체크되면 .wrap_radio에 .checked 클래스를 추가해주세요 -->
+										<input type="radio" class="radio_button_buddy" id="buddy_add" name="relation" value="0"  checked ><label for="buddy_add">이웃</label>
+									</span>
+							<span class="wrap_radio ">
+                                        <!-- [D] 서로이웃을 받지 않는 이웃일 경우 #each_buddy_add에 .disabled 클래스를 추가해주세요 -->
+										<input type="radio" class="radio_button_buddy" id="each_buddy_add" name="relation" value="1"   ><label for="each_buddy_add">서로이웃</label>
+									</span>
+							을 맺습니다.
+						</p>
+						
+					</div>
+					<div class="tip_box">
+						<ul class="list">
+							<li class="item"><a target="_blank" href="https://blog.naver.com/blogpeople/150083247322" class="link_blog_post">이웃과 서로이웃은 무엇인가요?</a></li>
+							<li class="item"><a target="_blank" href="https://blog.naver.com/blogpeople/150083262735" class="link_blog_post">이웃공개, 서로이웃공개 글은 누가 볼 수 있게 되나요?</a></li>
+						</ul>
+                        <a href="https://blog.naver.com/PostList.naver?from=postList&blogId=blogpeople&categoryNo=53&currentPage=1​​​" target="_blank" class="link_blog"><strong>블로그 이용 TIP 더보기</strong><i class="sp_common icon_arrow"></i></a>
+					</div>
+					
+						<p class="notice">
+							이웃의 새글은 <a href="http://myfeed.naver.com/" class="link_naver_me" target="_blank">네이버 MY구독</a>으로 자동으로 배달됩니다.
+						</p>
+					
+				</div>
+				<div class="area_button">
+					<a href="#" onclick="window.close()" class="button_cancel" role="button">취소</a>
+					<a href="javascript:buddyAdd();"  class="button_next _buddyAddNext" role="button">다음</a>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+</body>
+<script type="text/javascript" src="https://ssl.pstatic.net/t.static.blog/mylog/versioning//common/js/global/RemoveSubDomain-dea9950_https.js"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/t.static.blog/mylog/versioning//common/lib/jquery/1.12.0/jquery-1.12.0.min-6c60672_https.js"></script>
+
+<script language="javascript">
+  $(window).load(function(){
+	$( "._buddyAddNext" ).click(function(e) {
+	  e.preventDefault();
+	  document.buddyFrm.submit();
+	});
+
+	$("input[name=relation]").change(function() {
+	  var radioValue = $(this).val();
+
+	  //서로이웃
+	  if(radioValue == "1"){
+		$("#buddy_add").parent().removeClass("checked");
+		$("#each_buddy_add").parent().addClass("checked");
+	  }else{
+		$("#each_buddy_add").parent().removeClass("checked");
+		$("#buddy_add").parent().addClass("checked");
+	  }
+	});
+
+	function resize() {
+          try {
+              self.resizeBy(document.body.scrollWidth - document.body.clientWidth,
+                  $("#content").innerHeight() - $(window).innerHeight());
+        } catch(e){
+            setTimeout(resize, 100);
+        }
+	}
+	resize();
+
+	  if("false" === "true" && typeof opener.window.saveScrollStatusHandler !== "undefined") {
+		  opener.window.saveScrollStatusHandler.saveScrollAndReload();
+	  }
+  });
+
+</script>
